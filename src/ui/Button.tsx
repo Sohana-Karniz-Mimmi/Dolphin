@@ -17,7 +17,7 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const baseStyle =
-    "flex items-center justify-center gap-[8px] rounded-[4px] text-[15px] md:text-[18px] cursor-pointers font-medium transition-all";
+    "flex items-center justify-center gap-[8px] rounded-[4px] text-[15px] md:text-[18px] cursor-pointer font-medium transition-all";
 
   const variantStyle =
     variant === "primary"
