@@ -35,7 +35,7 @@ body {
     @apply flex justify-center items-center;
   }
   .layout_container {
-    @apply max-w-[1440px] mx-auto px-[10px] sm:px-[20px] xl:px-0;
+    @apply max-w-[1440px] mx-auto px-[16px] sm:px-[20px] xl:px-0;
   }
 }
 
