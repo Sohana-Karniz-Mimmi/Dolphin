@@ -36,7 +36,7 @@ const TermsAndConditions = () => {
       {/* Terms And Conditions Question and answer */}
       <div className="mt-[40px] md:mt-[62px]">
         {termsData.map((item, index) => (
-          <TermsAccordionItem key={index} question={item.question} answer={item.answer} isLast={index === termsData.length - 1}/>
+          <TermsAccordionItem key={index} question={item.question} answer={item.answer} isFirst={index === 0} isLast={index === termsData.length - 1}/>
         ))}
       </div>
     </section>

@@ -5,10 +5,6 @@
   --primary: #2C6176;
   --secondary: #F2A413;
   --main: #333;
-
-  /* Background Colors */
-  --bg-light-beige: #f9f1e7;
-  --bg-light-cream: #faf3ea;
   --font-mulish: 'Mulish', sans-serif;
 }
 
@@ -26,7 +22,6 @@
 
 body {
   background: var(--background);
-  font-family: var(--font-mulish);
   color: black;
 }
 

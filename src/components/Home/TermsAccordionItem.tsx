@@ -9,19 +9,29 @@ interface TermsAccordionItemProps {
   question: string;
   answer: string | React.ReactNode;
   isLast?: boolean;
+  isFirst?: boolean;
 }
 
-const TermsAccordionItem = ({ question, answer, isLast }: TermsAccordionItemProps) => {
+const TermsAccordionItem = ({
+  question,
+  answer,
+  isFirst,
+  isLast,
+}: TermsAccordionItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-        <div className={!isLast ? "border-b border-[#CFCFCF]" : ""}>
+    <div className={!isLast ? "border-b border-[#CFCFCF]" : ""}>
       <button
-        className="flex w-full items-center justify-between py-[24px] text-left focus:outline-none"
+        className={`flex w-full items-center justify-between text-left focus:outline-none ${
+          isFirst ? "pt-0" : "pt-[24px]"
+        } ${isLast ? "pb-0" : "pb-[24px]"}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
-        <h3 className="text-[15px] md:text-[22px] font-semibold text-main">{question}</h3>
+        <h3 className="text-[15px] md:text-[22px] font-semibold text-main">
+          {question}
+        </h3>
         {isOpen ? (
           <Minus className="h-5 w-5 text-main" />
         ) : (
@@ -48,7 +58,11 @@ const TermsAccordionItem = ({ question, answer, isLast }: TermsAccordionItemProp
         }`}
       >
         <div className="text-main leading-relaxed">
-          {typeof answer === "string" ? <p className="text-[14px] md:text-[17px]">{answer}</p> : answer}
+          {typeof answer === "string" ? (
+            <p className="text-[14px] md:text-[17px]">{answer}</p>
+          ) : (
+            answer
+          )}
         </div>
       </div>
     </div>
